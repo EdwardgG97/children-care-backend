@@ -1,5 +1,6 @@
 package com.childrencare.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "DTO para crear o actualizar artículos educativos")
 public class ArticleRequestDTO {
 
     /**
@@ -25,6 +27,7 @@ public class ArticleRequestDTO {
      * No puede estar vacío o ser nulo.
      * Máximo 200 caracteres.
      */
+    @Schema(description = "Título del artículo", example = "Seguridad Digital para Niños", required = true)
     @NotBlank(message = "El título es obligatorio")
     @Size(max = 200, message = "El título no puede exceder 200 caracteres")
     private String title;
@@ -34,6 +37,7 @@ public class ArticleRequestDTO {
      * No puede estar vacío o ser nulo.
      * Máximo 500 caracteres.
      */
+    @Schema(description = "Resumen breve del artículo", example = "Guía básica sobre seguridad digital para niños", required = true)
     @NotBlank(message = "El resumen es obligatorio")
     @Size(max = 500, message = "El resumen no puede exceder 500 caracteres")
     private String summary;
@@ -43,6 +47,7 @@ public class ArticleRequestDTO {
      * No puede estar vacío o ser nulo.
      * Máximo 5000 caracteres.
      */
+    @Schema(description = "Contenido completo del artículo", example = "El contenido completo del artículo sobre seguridad digital...", required = true)
     @NotBlank(message = "El contenido es obligatorio")
     @Size(max = 5000, message = "El contenido no puede exceder 5000 caracteres")
     private String content;
@@ -53,6 +58,7 @@ public class ArticleRequestDTO {
      * Máximo 100 caracteres.
      * Ejemplos: "Seguridad Digital", "Ciberacoso", "Privacidad", "Redes Sociales", etc.
      */
+    @Schema(description = "Categoría del artículo", example = "Seguridad Digital", required = true)
     @NotBlank(message = "La categoría es obligatoria")
     @Size(max = 100, message = "La categoría no puede exceder 100 caracteres")
     private String category;
@@ -62,6 +68,7 @@ public class ArticleRequestDTO {
      * Es opcional, puede ser nula.
      * Máximo 500 caracteres.
      */
+    @Schema(description = "URL de la imagen asociada al artículo", example = "https://example.com/image.jpg")
     @Size(max = 500, message = "La URL de la imagen no puede exceder 500 caracteres")
     private String imageUrl;
 }

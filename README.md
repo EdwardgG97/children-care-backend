@@ -21,6 +21,7 @@ El backend fue desarrollado utilizando Spring Boot y una base de datos H2, con e
 - Lombok
 - Validation
 - Spring Boot DevTools
+- SpringDoc OpenAPI (Swagger)
 
 ---
 
@@ -126,7 +127,47 @@ spring.jpa.show-sql=true
 
 ---
 
-# 💻 Consola H2
+# � Documentación de la API con Swagger/OpenAPI
+
+El proyecto incluye Swagger/OpenAPI para la documentación automática de la API.
+
+## Acceso a Swagger UI
+
+Puedes acceder a la interfaz de Swagger UI desde:
+
+```text
+http://localhost:8080/swagger-ui.html
+```
+
+## Características de Swagger
+
+- **Documentación interactiva**: Prueba los endpoints directamente desde el navegador
+- **Ejemplos de peticiones**: Cada endpoint incluye ejemplos de JSON
+- **Validación de esquemas**: Los DTOs están documentados con descripciones y ejemplos
+- **Organización por etiquetas**: Los endpoints están agrupados por funcionalidad
+
+## Endpoints documentados
+
+Todos los endpoints de la API están documentados en Swagger:
+- GET /api/articles - Obtener todos los artículos
+- GET /api/articles/{id} - Obtener artículo por ID
+- POST /api/articles - Crear nuevo artículo
+- PUT /api/articles/{id} - Actualizar artículo
+- DELETE /api/articles/{id} - Eliminar artículo
+- GET /api/articles/category/{category} - Buscar por categoría
+- GET /api/articles/search - Buscar por título
+
+## Acceso a OpenAPI JSON
+
+Para obtener la especificación OpenAPI en formato JSON:
+
+```text
+http://localhost:8080/api-docs
+```
+
+---
+
+# �💻 Consola H2
 
 Puedes acceder a la consola de H2 desde:
 
